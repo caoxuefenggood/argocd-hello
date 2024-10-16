@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: argocd-hello
+  name: argocd-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-hello
+  template:
+    metadata:
+      labels:
+        app: argocd-hello
+    spec:
+      containers:
+      - image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
+        name: demo
+        ports:
+        - containerPort: 80
