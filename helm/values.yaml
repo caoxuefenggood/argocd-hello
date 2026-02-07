@@ -5,6 +5,6 @@
 replicaCount: 1
 
 image:
-  repo: xuanyuan.me/library/nginx
+  repo: docker.xuanyuan.me/nginx
   pullPolicy: IfNotPresent
   tag: "latest"
